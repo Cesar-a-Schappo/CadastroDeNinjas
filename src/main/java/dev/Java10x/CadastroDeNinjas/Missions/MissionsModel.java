@@ -16,7 +16,9 @@ public class MissionsModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private char rank;
 
     // @OneToMany: uma missao pode ter varios ninjas
