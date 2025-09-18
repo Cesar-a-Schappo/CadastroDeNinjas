@@ -3,7 +3,6 @@ package dev.Java10x.CadastroDeNinjas.Missions;
 import dev.Java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
 
 @Entity
