@@ -14,21 +14,26 @@ public class MissionsController {
         this.missionsService = missionsService;
     }
 
-    // Get -- Mandar uma requisicao para mostrar as missoes
-    @GetMapping("/list")
-    public List<MissionsModel> listMissions() {
-        return missionsService.listMissions();
-    }
-
     // Post -- Mandar uma requisicao para criar as missoes
     @PostMapping("/create")
     public MissionsModel createMission(@RequestBody MissionsModel mission) {
         return missionsService.createMission(mission);
     }
 
+    // Get -- Mandar uma requisicao para mostrar as missoes
+    @GetMapping("/list")
+    public List<MissionsModel> listMissions() {
+        return missionsService.listMissions();
+    }
+
+    @GetMapping("/list/{id}")
+    public MissionsModel listMissionById(@PathVariable Long id) {
+        return missionsService.listMissionById(id);
+    }
+
     // Put -- Mandar uma requisicao para alterar as missoes
-    @PutMapping("/change")
-    public String changeMission() {
+    @PutMapping("/update")
+    public String updateMission() {
         return "Missao alterada com sucesso";
     }
 
