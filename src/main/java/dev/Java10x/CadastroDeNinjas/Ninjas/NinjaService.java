@@ -14,6 +14,11 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
+    // Criar novo ninja
+    public NinjaModel createNinja(NinjaModel ninja) {
+        return ninjaRepository.save(ninja);
+    }
+
     // Listar todos os ninjas
     public List<NinjaModel> listAllNinjas() {
         return ninjaRepository.findAll();
@@ -25,9 +30,9 @@ public class NinjaService {
         return ninjaById.orElse(null);
     }
 
-    // Criar novo ninja
-    public NinjaModel createNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    // Deletar ninja - Tem que ser um metodo void
+    public void deleteNinjaById(Long id) {
+        ninjaRepository.deleteById(id);
     }
 
 }
