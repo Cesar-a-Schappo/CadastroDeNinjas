@@ -13,6 +13,11 @@ public class MissionsService {
         this.missionsRepository = missionsRepository;
     }
 
+    // Criar nova missao
+    public MissionsModel createMission(MissionsModel missions) {
+        return missionsRepository.save(missions);
+    }
+
     // Listar todas as missoes
     public List<MissionsModel> listMissions() {
         return missionsRepository.findAll();
