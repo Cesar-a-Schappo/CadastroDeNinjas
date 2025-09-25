@@ -1,7 +1,6 @@
 package dev.Java10x.CadastroDeNinjas.Ninjas;
 
 import dev.Java10x.CadastroDeNinjas.Missions.MissionsModel;
-import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -10,14 +10,18 @@ import java.util.Optional;
 public class MissionsService {
 
     private MissionsRepository missionsRepository;
+    private MissionsMapper missionsMapper;
 
-    public MissionsService(MissionsRepository missionsRepository) {
+    public MissionsService(MissionsRepository missionsRepository, MissionsMapper missionsMapper) {
         this.missionsRepository = missionsRepository;
+        this.missionsMapper = missionsMapper;
     }
 
     // Criar nova missao
-    public MissionsModel createMission(MissionsModel missions) {
-        return missionsRepository.save(missions);
+    public MissionsDTO createMission(MissionsDTO missionsDTO) {
+        MissionsModel mission = missionsMapper.map(missionsDTO);
+        mission = missionsRepository.save(mission);
+        return missionsMapper.map(mission);
     }
 
     // Listar todas as missoes
