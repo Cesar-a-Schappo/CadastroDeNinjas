@@ -1,6 +1,5 @@
 package dev.Java10x.CadastroDeNinjas.Missions;
 
-import dev.Java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public class MissionsService {
         this.missionsMapper = missionsMapper;
     }
 
-    // Criar nova missao
+    // Criar missao
     public MissionsDTO createMission(MissionsDTO missionsDTO) {
         MissionsModel mission = missionsMapper.map(missionsDTO);
         mission = missionsRepository.save(mission);
@@ -25,21 +24,27 @@ public class MissionsService {
     }
 
     // Listar todas as missoes
-    public List<MissionsModel> listMissions() {
-        return missionsRepository.findAll();
+    public List<MissionsDTO> listMissions() {
+        List<MissionsModel> missions = missionsRepository.findAll();
+        return missions.stream()
+                .map(missionsMapper::map)
+                .toList();
     }
 
     // Listar missoes por id
-    public MissionsModel listMissionById(Long id) {
+    public MissionsDTO listMissionById(Long id) {
         Optional<MissionsModel> missionById = missionsRepository.findById(id);
-        return missionById.orElse(null);
+        return missionById.map(missionsMapper::map).orElse(null);
     }
 
     // Atualizar missoes
-    public MissionsModel updateMission(Long id, MissionsModel updatedMission) {
-        if (missionsRepository.existsById(id)) {
-            updatedMission.setId(id);
-            return missionsRepository.save(updatedMission);
+    public MissionsDTO updateMission(Long id, MissionsDTO missionsDTO) {
+        Optional<MissionsModel> missionToUpdate = missionsRepository.findById(id);
+        if (missionToUpdate.isPresent()) {
+            MissionsModel updatedMissions = missionsMapper.map(missionsDTO);
+            updatedMissions.setId(id);
+            MissionsModel savedMissions = missionsRepository.save(updatedMissions);
+            return missionsMapper.map(savedMissions);
         }
         return null;
     }

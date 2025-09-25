@@ -22,18 +22,18 @@ public class MissionsController {
 
     // Get -- Mandar uma requisicao para mostrar as missoes
     @GetMapping("/list")
-    public List<MissionsModel> listMissions() {
+    public List<MissionsDTO> listMissions() {
         return missionsService.listMissions();
     }
 
     @GetMapping("/list/{id}")
-    public MissionsModel listMissionById(@PathVariable Long id) {
+    public MissionsDTO listMissionById(@PathVariable Long id) {
         return missionsService.listMissionById(id);
     }
 
     // Put -- Mandar uma requisicao para alterar as missoes
     @PutMapping("/update/{id}")
-    public MissionsModel updateMission(@PathVariable Long id, @RequestBody MissionsModel updatedMission) {
+    public MissionsDTO updateMission(@PathVariable Long id, @RequestBody MissionsDTO updatedMission) {
         return missionsService.updateMission(id, updatedMission);
     }
 
