@@ -1,0 +1,3 @@
+Projeto Sistema de Cadastro de Ninjas – API de Gerenciamento | Java, Spring Boot, JPA, H2, Docker Desenvolvi uma API REST para o gerenciamento de ninjas e suas missões, utilizando uma arquitetura em camadas com Spring Boot. A aplicação gerencia a persistência de dados com Spring Data JPA em um banco H2, utiliza Flyway para o controle de versionamento do banco e Docker para a criação de um ambiente de desenvolvimento containerizado. O projeto foi estruturado com Maven e segue as boas práticas de controle de versão com Git e GitHub.
+
+Projeto ainda em desenvolvimento, com expectativa de aumento de complexidade.
