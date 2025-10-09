@@ -1,0 +1,265 @@
+/* === ESTILO GERAL - TEMA DARK NINJA === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --background: #1a1a2e; /* Azul noturno escuro */
+    --surface: #16213e;   /* Superfície dos cards, um pouco mais claro */
+    --primary: #0f3460;   /* Azul primário mais forte */
+    --secondary: #e94560; /* Rosa/vermelho para destaque e ações */
+    --text-primary: #e0e0e0; /* Texto principal - branco suave */
+    --text-secondary: #a7a7a7; /* Texto secundário - cinza claro */
+    --border-color: #333f58;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2rem;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ff6b81;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+    max-width: 950px;
+    margin: 2rem auto;
+    background-color: var(--surface);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === TABELA (listNinjas.html) === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background-color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #2a3b5a; /* Destaque ao passar o mouse */
+}
+
+tbody td img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+}
+
+.actions a {
+    margin: 0 8px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+.actions a:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.actions .details { color: #5dade2; }
+.actions .edit { color: #f1c40f; }
+.actions .delete { color: #e74c3c; }
+
+/* === BOTÕES E LINKS (COM EFEITO DE "CAIXA") === */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ff6b81;
+}
+
+/* Estilo base para todos os botões */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para dar profundidade */
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn:active {
+    transform: translateY(1px); /* Efeito de "pressionar" */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão principal de Ação (Adicionar / Salvar) */
+.btn-primary {
+    background: linear-gradient(145deg, #e94560, #d43f55);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(145deg, #ff6b81, #e94560);
+}
+
+/* Botão secundário (Voltar) */
+.btn-secondary {
+    background: var(--primary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: #2a3b5a;
+}
+
+/* Botões de Ação na Tabela (Detalhes, Alterar, Deletar) */
+.actions a {
+    display: inline-block; /* ESSENCIAL PARA CRIAR A "CAIXA" */
+    padding: 6px 14px;
+    margin: 0 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    color: white !important; /* Força a cor do texto a ser branca */
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.actions a:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    filter: brightness(1.15);
+}
+
+.actions .details { background-color: #3498db; }
+.actions .edit    { background-color: #f39c12; }
+.actions .delete  { background-color: #e74c3c; }
+
+/* Unificando o botão do formulário */
+.form-container button {
+    width: 100%;
+}
+
+/* === FORMULÁRIO (addNinja.html) === */
+.form-container {
+    max-width: 500px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.4);
+}
+
+.form-container button {
+    width: 100%;
+    background-color: var(--secondary);
+}
+.form-container button:hover {
+    background-color: #ff6b81;
+}
+
+/* === DETALHES (ninjaDetails.html) === */
+.details-container {
+    text-align: center;
+}
+
+.details-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--secondary);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+}
+
+.details-container h2 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.details-container p {
+    color: var(--text-secondary);
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.details-container strong {
+    color: var(--text-primary);
+}
+
+.details-container h3 {
+    margin-top: 2rem;
+    color: #fff;
+}
